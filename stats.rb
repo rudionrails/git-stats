@@ -39,7 +39,7 @@ module Git
           @commits += 1
         end
         
-        if m = line.match( /(\d+) files changed.*(\d+) insertions.*(\d+) deletions/ )
+        if m = line.match( /(\d+) files changed, (\d+) insertions\(\+\), (\d+) deletions/ )
           a = ( @stats[ author ] ||= Hash.new(0) )
           
           a[ :commits ] += 1
